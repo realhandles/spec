@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://realhandles.com/schema/realhandles-v1.json",
+  "title": "RealHandles signed proof (v1)",
+  "description": "A RealHandles artifact: either a full signed manifest (the portable, self-verifying proof that a set of accounts belongs to one holder of an Ed25519 key) or a signed anchor pointer (hosted once at a location the holder controls, pointing to the canonical manifest). In both cases the compact JWS in `jws` is authoritative; the mirrored JSON fields are a convenience for humans and must never be trusted over the decoded, signature-verified payload.",
+  "oneOf": [{ "$ref": "#/$defs/signedManifestFile" }, { "$ref": "#/$defs/pointerFile" }],
+  "$defs": {
+    "ed25519PublicJwk": {
+      "type": "object",
+      "description": "An Ed25519 public key as a JWK (RFC 8037).",
+      "required": ["kty", "crv", "x"],
+      "properties": {
+        "kty": { "const": "OKP" },
+        "crv": { "const": "Ed25519" },
+        "x": { "type": "string", "description": "base64url-encoded public key bytes" }
+      }
+    },
+    "account": {
+      "type": "object",
+      "required": ["platform", "handle", "profileUrl", "method", "verifiedAt"],
+      "properties": {
+        "platform": { "type": "string", "description": "Platform key, e.g. \"github\", \"x\", or \"domain\" for a controlled domain." },
+        "handle": { "type": "string", "description": "The username on that platform, or the domain itself." },
+        "profileUrl": { "type": "string" },
+        "method": { "type": "string", "description": "How control was proven. First-party methods (oauth, tweet-proof, post-proof, description-proof, atproto, domain-control, domain-anchor) are Verified; anything else is a self-asserted Claim." },
+        "verifiedAt": { "type": "string", "format": "date-time" },
+        "entity": { "enum": ["organization", "server"], "description": "Present when the account is an organization or server the holder runs, rather than a personal profile." },
+        "image": { "type": "string", "description": "Logo/icon URL for an organization or server account." },
+        "builder": { "type": "string", "description": "For a link-in-bio (rel=me) account, the recognized page builder (e.g. \"lilhub\"). Cosmetic label only; never a trust signal." }
+      }
+    },
+    "anchor": {
+      "type": "object",
+      "required": ["url", "kind"],
+      "properties": {
+        "url": { "type": "string", "description": "Where the signed anchor file is hosted." },
+        "kind": { "enum": ["domain", "gist", "other"] },
+        "domain": { "type": "string", "description": "For a domain anchor, the domain itself." }
+      }
+    },
+    "manifest": {
+      "type": "object",
+      "required": ["version", "subject", "accounts", "issued", "statement"],
+      "properties": {
+        "version": { "const": "1" },
+        "subject": {
+          "type": "object",
+          "required": ["username", "publicKey", "keyId"],
+          "properties": {
+            "username": { "type": "string" },
+            "displayName": { "type": "string" },
+            "publicKey": { "$ref": "#/$defs/ed25519PublicJwk" },
+            "keyId": { "type": "string", "description": "base64url(SHA-256(canonical public JWK)): the stable fingerprint verifiers pin." }
+          }
+        },
+        "accounts": { "type": "array", "items": { "$ref": "#/$defs/account" } },
+        "anchor": { "$ref": "#/$defs/anchor" },
+        "issued": { "type": "string", "format": "date-time" },
+        "statement": { "type": "string" }
+      }
+    },
+    "signedManifestFile": {
+      "type": "object",
+      "required": ["$schema", "jws", "manifest", "publicKeyJwk", "keyId"],
+      "properties": {
+        "$schema": { "const": "https://realhandles.com/schema/realhandles-v1.json" },
+        "jws": { "type": "string", "description": "Compact JWS (EdDSA/Ed25519) whose payload is the manifest. Authoritative." },
+        "manifest": { "$ref": "#/$defs/manifest" },
+        "publicKeyJwk": { "$ref": "#/$defs/ed25519PublicJwk" },
+        "keyId": { "type": "string" }
+      }
+    },
+    "pointerFile": {
+      "type": "object",
+      "required": ["$schema", "jws", "pointer", "publicKeyJwk", "keyId"],
+      "properties": {
+        "$schema": { "const": "https://realhandles.com/schema/realhandles-v1.json" },
+        "jws": { "type": "string", "description": "Compact JWS (EdDSA/Ed25519) whose payload is the pointer. Authoritative." },
+        "pointer": {
+          "type": "object",
+          "required": ["version", "type", "keyId", "publicKey", "canonical", "issued"],
+          "properties": {
+            "version": { "const": "1" },
+            "type": { "const": "anchor-pointer" },
+            "keyId": { "type": "string" },
+            "publicKey": { "$ref": "#/$defs/ed25519PublicJwk" },
+            "canonical": { "type": "string", "description": "The always-current manifest URL, e.g. https://realhandles.com/<user>/realhandles.json" },
+            "issued": { "type": "string", "format": "date-time" }
+          }
+        },
+        "publicKeyJwk": { "$ref": "#/$defs/ed25519PublicJwk" },
+        "keyId": { "type": "string" }
+      }
+    }
+  }
+}

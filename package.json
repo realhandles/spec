@@ -1,0 +1,19 @@
+{
+  "name": "realhandles-spec",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "The RealHandles identity protocol: specification, JSON Schema, and conformance vectors.",
+  "license": "MIT",
+  "homepage": "https://realhandles.com/spec",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realhandles/spec.git"
+  },
+  "scripts": {
+    "generate": "node vectors/generate.mjs"
+  },
+  "devDependencies": {
+    "jose": "^6.1.0"
+  }
+}

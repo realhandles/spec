@@ -1,0 +1,41 @@
+{
+  "$schema": "https://realhandles.com/schema/realhandles-v1.json",
+  "jws": "eyJhbGciOiJFZERTQSIsImtpZCI6Imw2UXAxLWtuZWxGRGdwZHlUOGlfb2hKbzBnM0c4NzNEQTdMaGs5STVnYncifQ.eyJ2ZXJzaW9uIjoiMSIsInN1YmplY3QiOnsidXNlcm5hbWUiOiJkdmsiLCJkaXNwbGF5TmFtZSI6IkRhdmlkIFYuIEtpbWJhbGwiLCJwdWJsaWNLZXkiOnsiY3J2IjoiRWQyNTUxOSIsIngiOiJ4UFdoWjFpaUxNd1hBeEtJYWtjbTdQNHlka0hiYk5LV1NPRHNlY3hXVW5jIiwia3R5IjoiT0tQIn0sImtleUlkIjoibDZRcDEta25lbEZEZ3BkeVQ4aV9vaEpvMGczRzg3M0RBN0xoazlJNWdidyJ9LCJhY2NvdW50cyI6W3sicGxhdGZvcm0iOiJnaXRodWIiLCJoYW5kbGUiOiJkYXZpZHZraW1iYWxsIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZ2l0aHViLmNvbS9kYXZpZHZraW1iYWxsIiwibWV0aG9kIjoib2F1dGgiLCJ2ZXJpZmllZEF0IjoiMjAyNi0wMS0wMVQwMDowMDowMC4wMDBaIn0seyJwbGF0Zm9ybSI6ImRvbWFpbiIsImhhbmRsZSI6ImRhdmlkdmtpbWJhbGwuY29tIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZGF2aWR2a2ltYmFsbC5jb20iLCJtZXRob2QiOiJkb21haW4tY29udHJvbCIsInZlcmlmaWVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoifV0sImlzc3VlZCI6IjIwMjYtMDEtMDFUMDA6MDA6MDAuMDAwWiIsInN0YXRlbWVudCI6IlRoZXNlIGFjY291bnRzIGJlbG9uZyB0byB0aGUgaG9sZGVyIG9mIHRoaXMga2V5LiJ9.rdpRgi6o0xEfXzSG2vPqNNWM-BxPnFAGT3dnqWu8ngGnQgZ64r9vC-z2K_xVdOu2KRDNu5idjUeWlHKey1mdAg",
+  "manifest": {
+    "version": "1",
+    "subject": {
+      "username": "dvk",
+      "displayName": "David V. Kimball",
+      "publicKey": {
+        "crv": "Ed25519",
+        "x": "xPWhZ1iiLMwXAxKIakcm7P4ydkHbbNKWSODsecxWUnc",
+        "kty": "OKP"
+      },
+      "keyId": "l6Qp1-knelFDgpdyT8i_ohJo0g3G873DA7Lhk9I5gbw"
+    },
+    "accounts": [
+      {
+        "platform": "github",
+        "handle": "davidvkimball",
+        "profileUrl": "https://github.com/davidvkimball",
+        "method": "oauth",
+        "verifiedAt": "2026-01-01T00:00:00.000Z"
+      },
+      {
+        "platform": "domain",
+        "handle": "davidvkimball.com",
+        "profileUrl": "https://davidvkimball.com",
+        "method": "domain-control",
+        "verifiedAt": "2026-01-01T00:00:00.000Z"
+      }
+    ],
+    "issued": "2026-01-01T00:00:00.000Z",
+    "statement": "These accounts belong to the holder of this key."
+  },
+  "publicKeyJwk": {
+    "crv": "Ed25519",
+    "x": "xPWhZ1iiLMwXAxKIakcm7P4ydkHbbNKWSODsecxWUnc",
+    "kty": "OKP"
+  },
+  "keyId": "l6Qp1-knelFDgpdyT8i_ohJo0g3G873DA7Lhk9I5gbw"
+}
