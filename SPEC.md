@@ -151,8 +151,17 @@ history (served oldest-first at
 verifies (section 4), `seq` starts at 0 and increments by 1, each `prev` equals
 the hash of the previous entry's JWS, and the key is consistent. Missing
 `seq`/`prev` on an older manifest is treated as genesis. This is `verifyChain` in
-`@realhandles/verify`. Key rotation (a manifest whose key changes, authorized by
-the previous key) is a planned extension.
+`@realhandles/verify`.
+
+**Key rotation.** An entry may change the signing key (a new
+`subject.publicKey` / `keyId`) when it carries a `rotation` object
+`{ prevKeyId, prevKeySig }`. `prevKeySig` is a compact JWS by the PREVIOUS key
+over the exact string `rh-rotate:v1:<newKeyId>:<seq>:<prev>` (empty for a null
+prev). A verifier confirms the previous key (whose public JWK is in the prior
+entry) signed that statement, then transfers trust to the new key. You pin the
+**genesis** key; the chain proves the current key from it. A key change without a
+valid rotation is rejected. This is how an identity survives a key loss or
+planned rotation without becoming a different person.
 
 ## 5. Handle reservation
 

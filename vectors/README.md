@@ -10,6 +10,7 @@ own public key, so it verifies with no external material.
 | `wrong-keyid.json` | **invalid** | Signature is good, but `subject.keyId` is not the fingerprint of the key (verification step 4). |
 | `tampered-signature.json` | **invalid** | Payload is intact but the JWS signature was altered (verification step 2). |
 | `valid-chain.json` | **valid chain** | A two-entry append-only sigchain (`{versions:[{seq,file}]}`). `verifyChain` accepts it: seq 0 then 1, `prev` links by hash, one key throughout. |
+| `valid-rotation-chain.json` | **valid chain, key rotated** | Genesis by key A, then an entry signed by a new key B with a `rotation` A authorized. `verifyChain` accepts it (pin the genesis) and reports B as the current key. |
 
 A stricter verifier may also confirm the JSON validates against
 [`../schema/realhandles-v1.json`](../schema/realhandles-v1.json), but schema

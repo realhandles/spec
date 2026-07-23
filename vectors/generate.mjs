@@ -80,4 +80,22 @@ const v2Jws = await sign(v2Manifest);
 const v2File = { $schema: SCHEMA, jws: v2Jws, manifest: v2Manifest, publicKeyJwk, keyId };
 write('valid-chain.json', { username: 'dvk', count: 2, versions: [{ seq: 0, file: genFile }, { seq: 1, file: v2File }] });
 
-console.log('Wrote valid-manifest.json, wrong-keyid.json, tampered-signature.json, valid-chain.json');
+// 5) Valid key rotation: genesis by key A, then a second entry signed by a NEW
+//    key B, with a rotation attestation that A signed to authorize B. verifyChain
+//    must accept it and report B as the current key.
+const kpB = await generateKeyPair('EdDSA', { crv: 'Ed25519', extractable: true });
+const pubB = await exportJWK(kpB.publicKey);
+const keyIdB = await keyIdFromJwk(pubB);
+const rotStmt = (n, s, p) => `rh-rotate:v1:${n}:${s}:${p ?? ''}`;
+const prevForRot = await hashJws(genJws);
+const prevKeySig = await new CompactSign(enc.encode(rotStmt(keyIdB, 1, prevForRot)))
+  .setProtectedHeader({ alg: 'EdDSA', kid: keyId })
+  .sign(privateKey);
+const rotManifest = { ...manifest, subject: { ...manifest.subject, publicKey: pubB, keyId: keyIdB }, seq: 1, prev: prevForRot, rotation: { prevKeyId: keyId, prevKeySig } };
+const rotJws = await new CompactSign(enc.encode(JSON.stringify(rotManifest)))
+  .setProtectedHeader({ alg: 'EdDSA', kid: keyIdB })
+  .sign(kpB.privateKey);
+const rotFile = { $schema: SCHEMA, jws: rotJws, manifest: rotManifest, publicKeyJwk: pubB, keyId: keyIdB };
+write('valid-rotation-chain.json', { username: 'dvk', count: 2, versions: [{ seq: 0, file: genFile }, { seq: 1, file: rotFile }] });
+
+console.log('Wrote valid-manifest.json, wrong-keyid.json, tampered-signature.json, valid-chain.json, valid-rotation-chain.json');
