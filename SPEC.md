@@ -134,12 +134,15 @@ Pointer files verify the same way against their own payload.
 
 ## 5. Handle reservation
 
-Short (scarce) handles cannot be grabbed first-come. The shorter the handle, the
-stronger the matching proof required to claim it, and only first-party-verified
-proofs on curated key platforms (or a controlled domain) qualify: `.com` ranks
-above other TLDs, which rank above tier-1 platforms, above tier-2. Claimed
-proofs and URL-control proofs (including `rel-me`) never gate a handle. The exact
-rules are implemented, dependency-free and isomorphic, in `@realhandles/verify`
+Short (scarce) handles cannot be grabbed first-come. Names of 8 characters or
+fewer are PROTECTED and require a matching first-party-verified proof; names of 9
+or more are open. Only proofs on curated key platforms or a controlled domain
+qualify, and the shorter the name, the stronger the proof required: `.com` (100)
+> an established strong TLD (80) > a tier-1 platform (60) > a tier-2 platform
+(40). A throwaway or otherwise cheap TLD scores below the gating threshold, so it
+adds to the trust score but cannot clear a scarce name (nobody grabs "ben" by
+buying `ben.<cheap-tld>`). Claimed and URL-control proofs (including `rel-me`)
+never gate a handle. The exact rules are in `@realhandles/verify`
 (`evaluateClaim`, `tierFor`, `proofStrength`).
 
 ## 6. did:key
