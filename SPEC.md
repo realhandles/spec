@@ -55,6 +55,8 @@ verifier that disagrees with the mirror ignores the mirror.
 | `anchor` | no | One rotatable pointer (see 1.5). Never the identity. |
 | `issued` | yes | ISO 8601 timestamp. |
 | `statement` | yes | Human-readable claim. |
+| `seq` | no | Sigchain position: 0-based, +1 per re-sign. Missing = genesis (0). See 4.1. |
+| `prev` | no | `base64url(SHA-256(previous manifest JWS))`, or null at genesis. |
 
 ### 1.3 Account claim
 
@@ -131,6 +133,26 @@ Given a file, to verify (optionally against a trusted `expectedKeyId`):
    but "is this signed by the key I already trust."
 
 Pointer files verify the same way against their own payload.
+
+## 4.1 Manifest history (sigchain)
+
+Re-signing does not replace the past; each signed manifest is retained, so an
+identity has an append-only history. Two signed fields make that history
+tamper-evident:
+
+- `seq`: 0 for the first manifest, then +1 each re-sign.
+- `prev`: `base64url(SHA-256(previous manifest's compact JWS))`, or null at
+  genesis.
+
+Because `prev` is inside the signed payload, you cannot rewrite a past entry
+without breaking every hash link and signature that follows it. To verify a whole
+history (served oldest-first at
+`https://realhandles.com/<user>/realhandles-chain.json`), check that each entry
+verifies (section 4), `seq` starts at 0 and increments by 1, each `prev` equals
+the hash of the previous entry's JWS, and the key is consistent. Missing
+`seq`/`prev` on an older manifest is treated as genesis. This is `verifyChain` in
+`@realhandles/verify`. Key rotation (a manifest whose key changes, authorized by
+the previous key) is a planned extension.
 
 ## 5. Handle reservation
 

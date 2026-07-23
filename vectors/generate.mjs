@@ -65,4 +65,19 @@ const [h, p, s] = validJws.split('.');
 const badSig = s.slice(0, -3) + (s.endsWith('aaa') ? 'bbb' : 'aaa');
 write('tampered-signature.json', { $schema: SCHEMA, jws: [h, p, badSig].join('.'), manifest, publicKeyJwk, keyId });
 
-console.log('Wrote valid-manifest.json, wrong-keyid.json, tampered-signature.json');
+// 4) Valid two-entry sigchain: genesis (seq 0, prev null) then a second manifest
+//    whose prev is the hash of the genesis JWS. verifyChain must accept it. Shape
+//    matches /<user>/realhandles-chain.json.
+async function hashJws(jws) {
+  const d = await webcrypto.subtle.digest('SHA-256', enc.encode(jws));
+  return b64u(new Uint8Array(d));
+}
+const genManifest = { ...manifest, seq: 0, prev: null };
+const genJws = await sign(genManifest);
+const genFile = { $schema: SCHEMA, jws: genJws, manifest: genManifest, publicKeyJwk, keyId };
+const v2Manifest = { ...manifest, seq: 1, prev: await hashJws(genJws) };
+const v2Jws = await sign(v2Manifest);
+const v2File = { $schema: SCHEMA, jws: v2Jws, manifest: v2Manifest, publicKeyJwk, keyId };
+write('valid-chain.json', { username: 'dvk', count: 2, versions: [{ seq: 0, file: genFile }, { seq: 1, file: v2File }] });
+
+console.log('Wrote valid-manifest.json, wrong-keyid.json, tampered-signature.json, valid-chain.json');

@@ -9,6 +9,7 @@ own public key, so it verifies with no external material.
 | `valid-manifest.json` | **valid** | Correctly signed; `subject.keyId` is the fingerprint of the embedded key. |
 | `wrong-keyid.json` | **invalid** | Signature is good, but `subject.keyId` is not the fingerprint of the key (verification step 4). |
 | `tampered-signature.json` | **invalid** | Payload is intact but the JWS signature was altered (verification step 2). |
+| `valid-chain.json` | **valid chain** | A two-entry append-only sigchain (`{versions:[{seq,file}]}`). `verifyChain` accepts it: seq 0 then 1, `prev` links by hash, one key throughout. |
 
 A stricter verifier may also confirm the JSON validates against
 [`../schema/realhandles-v1.json`](../schema/realhandles-v1.json), but schema
