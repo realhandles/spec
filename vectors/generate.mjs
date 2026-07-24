@@ -98,4 +98,63 @@ const rotJws = await new CompactSign(enc.encode(JSON.stringify(rotManifest)))
 const rotFile = { $schema: SCHEMA, jws: rotJws, manifest: rotManifest, publicKeyJwk: pubB, keyId: keyIdB };
 write('valid-rotation-chain.json', { username: 'dvk', count: 2, versions: [{ seq: 0, file: genFile }, { seq: 1, file: rotFile }] });
 
-console.log('Wrote valid-manifest.json, wrong-keyid.json, tampered-signature.json, valid-chain.json, valid-rotation-chain.json');
+// 6) Valid RECOVERY: genesis by key A designates a recovery key R, then key A is
+//    lost and a new key C takes over, authorized by R rather than by A. The
+//    policy that counts is the one published in the GENESIS entry. verifyChain
+//    must accept it and report C as the current key.
+const kpR = await generateKeyPair('EdDSA', { crv: 'Ed25519', extractable: true });
+const pubR = await exportJWK(kpR.publicKey);
+const keyIdR = await keyIdFromJwk(pubR);
+const kpC = await generateKeyPair('EdDSA', { crv: 'Ed25519', extractable: true });
+const pubC = await exportJWK(kpC.publicKey);
+const keyIdC = await keyIdFromJwk(pubC);
+const recStmt = (n, s, p) => `rh-recover:v1:${n}:${s}:${p ?? ''}`;
+const policy = { threshold: 1, keys: [{ keyId: keyIdR, publicKey: pubR, label: 'printed recovery key' }] };
+
+const recGenManifest = { ...manifest, seq: 0, prev: null, recovery: policy };
+const recGenJws = await sign(recGenManifest);
+const recGenFile = { $schema: SCHEMA, jws: recGenJws, manifest: recGenManifest, publicKeyJwk, keyId };
+
+const prevForRec = await hashJws(recGenJws);
+const recSig = await new CompactSign(enc.encode(recStmt(keyIdC, 1, prevForRec)))
+  .setProtectedHeader({ alg: 'EdDSA', kid: keyIdR })
+  .sign(kpR.privateKey);
+const recManifest = {
+  ...manifest,
+  subject: { ...manifest.subject, publicKey: pubC, keyId: keyIdC },
+  seq: 1,
+  prev: prevForRec,
+  rotation: { recovery: [{ keyId: keyIdR, sig: recSig }] },
+  recovery: policy,
+};
+const recJws = await new CompactSign(enc.encode(JSON.stringify(recManifest)))
+  .setProtectedHeader({ alg: 'EdDSA', kid: keyIdC })
+  .sign(kpC.privateKey);
+const recFile = { $schema: SCHEMA, jws: recJws, manifest: recManifest, publicKeyJwk: pubC, keyId: keyIdC };
+write('valid-recovery-chain.json', { username: 'dvk', count: 2, versions: [{ seq: 0, file: recGenFile }, { seq: 1, file: recFile }] });
+
+// 7) FORGED recovery: the same shape, but the identity never designated anyone.
+//    The forging entry declares a policy naming its OWN accomplice key, which is
+//    exactly the attack the rule exists to stop. verifyChain must REJECT it.
+const kpX = await generateKeyPair('EdDSA', { crv: 'Ed25519', extractable: true });
+const pubX = await exportJWK(kpX.publicKey);
+const keyIdX = await keyIdFromJwk(pubX);
+const forgedSig = await new CompactSign(enc.encode(recStmt(keyIdC, 1, await hashJws(genJws))))
+  .setProtectedHeader({ alg: 'EdDSA', kid: keyIdX })
+  .sign(kpX.privateKey);
+const forgedManifest = {
+  ...manifest,
+  subject: { ...manifest.subject, publicKey: pubC, keyId: keyIdC },
+  seq: 1,
+  prev: await hashJws(genJws),
+  rotation: { recovery: [{ keyId: keyIdX, sig: forgedSig }] },
+  recovery: { threshold: 1, keys: [{ keyId: keyIdX, publicKey: pubX, label: 'self-declared' }] },
+};
+const forgedJws = await new CompactSign(enc.encode(JSON.stringify(forgedManifest)))
+  .setProtectedHeader({ alg: 'EdDSA', kid: keyIdC })
+  .sign(kpC.privateKey);
+const forgedFile = { $schema: SCHEMA, jws: forgedJws, manifest: forgedManifest, publicKeyJwk: pubC, keyId: keyIdC };
+// genFile designates NO recovery keys, so this must not verify.
+write('forged-recovery-chain.json', { username: 'dvk', count: 2, mustFail: true, versions: [{ seq: 0, file: genFile }, { seq: 1, file: forgedFile }] });
+
+console.log('Wrote valid-manifest.json, wrong-keyid.json, tampered-signature.json, valid-chain.json, valid-rotation-chain.json, valid-recovery-chain.json, forged-recovery-chain.json');

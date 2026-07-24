@@ -6,7 +6,7 @@
       "seq": 0,
       "file": {
         "$schema": "https://realhandles.com/schema/realhandles-v1.json",
-        "jws": "eyJhbGciOiJFZERTQSIsImtpZCI6Iks4MW1ublE5cmpiaHFyd0NPM0FFZzRiQzNqSmwxdnd5OG95SHVWSGg0ZFkifQ.eyJ2ZXJzaW9uIjoiMSIsInN1YmplY3QiOnsidXNlcm5hbWUiOiJkdmsiLCJkaXNwbGF5TmFtZSI6IkRhdmlkIFYuIEtpbWJhbGwiLCJwdWJsaWNLZXkiOnsiY3J2IjoiRWQyNTUxOSIsIngiOiJrTjhxSUVVbzMyZ3hKSDhSY055Si1EVUVMVU1vbWlnbnNCUDF6Y2VfdFpnIiwia3R5IjoiT0tQIn0sImtleUlkIjoiSzgxbW5uUTlyamJocXJ3Q08zQUVnNGJDM2pKbDF2d3k4b3lIdVZIaDRkWSJ9LCJhY2NvdW50cyI6W3sicGxhdGZvcm0iOiJnaXRodWIiLCJoYW5kbGUiOiJkYXZpZHZraW1iYWxsIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZ2l0aHViLmNvbS9kYXZpZHZraW1iYWxsIiwibWV0aG9kIjoib2F1dGgiLCJ2ZXJpZmllZEF0IjoiMjAyNi0wMS0wMVQwMDowMDowMC4wMDBaIn0seyJwbGF0Zm9ybSI6ImRvbWFpbiIsImhhbmRsZSI6ImRhdmlkdmtpbWJhbGwuY29tIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZGF2aWR2a2ltYmFsbC5jb20iLCJtZXRob2QiOiJkb21haW4tY29udHJvbCIsInZlcmlmaWVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoifV0sImlzc3VlZCI6IjIwMjYtMDEtMDFUMDA6MDA6MDAuMDAwWiIsInN0YXRlbWVudCI6IlRoZXNlIGFjY291bnRzIGJlbG9uZyB0byB0aGUgaG9sZGVyIG9mIHRoaXMga2V5LiIsInNlcSI6MCwicHJldiI6bnVsbH0.9QszliIfiRnRO0g0p_ogKCLbNvU5rl2V9r5L-sv99nZ-uTz_uMEVc8ShqcLVQEYhESeLRUj4x3EyWM6XoRidBw",
+        "jws": "eyJhbGciOiJFZERTQSIsImtpZCI6InN6OWpZaDBuc3MwR1hKZ2FnOE9MRnpfUG9iakhyWWZ4dVRLTVBPeUI3WjAifQ.eyJ2ZXJzaW9uIjoiMSIsInN1YmplY3QiOnsidXNlcm5hbWUiOiJkdmsiLCJkaXNwbGF5TmFtZSI6IkRhdmlkIFYuIEtpbWJhbGwiLCJwdWJsaWNLZXkiOnsiY3J2IjoiRWQyNTUxOSIsIngiOiI5NUt2dzlxbjV2dUZyOXNUV0NkWksxWkJjZDU5Q3drVURCYldILXZtR2o0Iiwia3R5IjoiT0tQIn0sImtleUlkIjoic3o5alloMG5zczBHWEpnYWc4T0xGel9Qb2JqSHJZZnh1VEtNUE95QjdaMCJ9LCJhY2NvdW50cyI6W3sicGxhdGZvcm0iOiJnaXRodWIiLCJoYW5kbGUiOiJkYXZpZHZraW1iYWxsIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZ2l0aHViLmNvbS9kYXZpZHZraW1iYWxsIiwibWV0aG9kIjoib2F1dGgiLCJ2ZXJpZmllZEF0IjoiMjAyNi0wMS0wMVQwMDowMDowMC4wMDBaIn0seyJwbGF0Zm9ybSI6ImRvbWFpbiIsImhhbmRsZSI6ImRhdmlkdmtpbWJhbGwuY29tIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZGF2aWR2a2ltYmFsbC5jb20iLCJtZXRob2QiOiJkb21haW4tY29udHJvbCIsInZlcmlmaWVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoifV0sImlzc3VlZCI6IjIwMjYtMDEtMDFUMDA6MDA6MDAuMDAwWiIsInN0YXRlbWVudCI6IlRoZXNlIGFjY291bnRzIGJlbG9uZyB0byB0aGUgaG9sZGVyIG9mIHRoaXMga2V5LiIsInNlcSI6MCwicHJldiI6bnVsbH0.0ELLxoDoUsNtN3HPhaWRCM1NEUk-P19XqX37_9CMzsBJ8fxeUeZp0CXwblVBSWwNcO_u-kFnRyW8rkW53DgZCA",
         "manifest": {
           "version": "1",
           "subject": {
@@ -14,10 +14,10 @@
             "displayName": "David V. Kimball",
             "publicKey": {
               "crv": "Ed25519",
-              "x": "kN8qIEUo32gxJH8RcNyJ-DUELUMomignsBP1zce_tZg",
+              "x": "95Kvw9qn5vuFr9sTWCdZK1ZBcd59CwkUDBbWH-vmGj4",
               "kty": "OKP"
             },
-            "keyId": "K81mnnQ9rjbhqrwCO3AEg4bC3jJl1vwy8oyHuVHh4dY"
+            "keyId": "sz9jYh0nss0GXJgag8OLFz_PobjHrYfxuTKMPOyB7Z0"
           },
           "accounts": [
             {
@@ -42,17 +42,17 @@
         },
         "publicKeyJwk": {
           "crv": "Ed25519",
-          "x": "kN8qIEUo32gxJH8RcNyJ-DUELUMomignsBP1zce_tZg",
+          "x": "95Kvw9qn5vuFr9sTWCdZK1ZBcd59CwkUDBbWH-vmGj4",
           "kty": "OKP"
         },
-        "keyId": "K81mnnQ9rjbhqrwCO3AEg4bC3jJl1vwy8oyHuVHh4dY"
+        "keyId": "sz9jYh0nss0GXJgag8OLFz_PobjHrYfxuTKMPOyB7Z0"
       }
     },
     {
       "seq": 1,
       "file": {
         "$schema": "https://realhandles.com/schema/realhandles-v1.json",
-        "jws": "eyJhbGciOiJFZERTQSIsImtpZCI6Iks4MW1ublE5cmpiaHFyd0NPM0FFZzRiQzNqSmwxdnd5OG95SHVWSGg0ZFkifQ.eyJ2ZXJzaW9uIjoiMSIsInN1YmplY3QiOnsidXNlcm5hbWUiOiJkdmsiLCJkaXNwbGF5TmFtZSI6IkRhdmlkIFYuIEtpbWJhbGwiLCJwdWJsaWNLZXkiOnsiY3J2IjoiRWQyNTUxOSIsIngiOiJrTjhxSUVVbzMyZ3hKSDhSY055Si1EVUVMVU1vbWlnbnNCUDF6Y2VfdFpnIiwia3R5IjoiT0tQIn0sImtleUlkIjoiSzgxbW5uUTlyamJocXJ3Q08zQUVnNGJDM2pKbDF2d3k4b3lIdVZIaDRkWSJ9LCJhY2NvdW50cyI6W3sicGxhdGZvcm0iOiJnaXRodWIiLCJoYW5kbGUiOiJkYXZpZHZraW1iYWxsIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZ2l0aHViLmNvbS9kYXZpZHZraW1iYWxsIiwibWV0aG9kIjoib2F1dGgiLCJ2ZXJpZmllZEF0IjoiMjAyNi0wMS0wMVQwMDowMDowMC4wMDBaIn0seyJwbGF0Zm9ybSI6ImRvbWFpbiIsImhhbmRsZSI6ImRhdmlkdmtpbWJhbGwuY29tIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZGF2aWR2a2ltYmFsbC5jb20iLCJtZXRob2QiOiJkb21haW4tY29udHJvbCIsInZlcmlmaWVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoifV0sImlzc3VlZCI6IjIwMjYtMDEtMDFUMDA6MDA6MDAuMDAwWiIsInN0YXRlbWVudCI6IlRoZXNlIGFjY291bnRzIGJlbG9uZyB0byB0aGUgaG9sZGVyIG9mIHRoaXMga2V5LiIsInNlcSI6MSwicHJldiI6IkRYNHdxMF9DMy1UZmg3VUU0R3FZdWFRU3E4RURTampGTkh5U2FERWJrc0kifQ.780Ww9NtKSQlq5pjkBVHKsBpg9mpooLp5e7RpzhgfGM8k9jseNJG9QHL7Nc8pAqNwMcsLGzthBbEhgHseOj4DQ",
+        "jws": "eyJhbGciOiJFZERTQSIsImtpZCI6InN6OWpZaDBuc3MwR1hKZ2FnOE9MRnpfUG9iakhyWWZ4dVRLTVBPeUI3WjAifQ.eyJ2ZXJzaW9uIjoiMSIsInN1YmplY3QiOnsidXNlcm5hbWUiOiJkdmsiLCJkaXNwbGF5TmFtZSI6IkRhdmlkIFYuIEtpbWJhbGwiLCJwdWJsaWNLZXkiOnsiY3J2IjoiRWQyNTUxOSIsIngiOiI5NUt2dzlxbjV2dUZyOXNUV0NkWksxWkJjZDU5Q3drVURCYldILXZtR2o0Iiwia3R5IjoiT0tQIn0sImtleUlkIjoic3o5alloMG5zczBHWEpnYWc4T0xGel9Qb2JqSHJZZnh1VEtNUE95QjdaMCJ9LCJhY2NvdW50cyI6W3sicGxhdGZvcm0iOiJnaXRodWIiLCJoYW5kbGUiOiJkYXZpZHZraW1iYWxsIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZ2l0aHViLmNvbS9kYXZpZHZraW1iYWxsIiwibWV0aG9kIjoib2F1dGgiLCJ2ZXJpZmllZEF0IjoiMjAyNi0wMS0wMVQwMDowMDowMC4wMDBaIn0seyJwbGF0Zm9ybSI6ImRvbWFpbiIsImhhbmRsZSI6ImRhdmlkdmtpbWJhbGwuY29tIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZGF2aWR2a2ltYmFsbC5jb20iLCJtZXRob2QiOiJkb21haW4tY29udHJvbCIsInZlcmlmaWVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoifV0sImlzc3VlZCI6IjIwMjYtMDEtMDFUMDA6MDA6MDAuMDAwWiIsInN0YXRlbWVudCI6IlRoZXNlIGFjY291bnRzIGJlbG9uZyB0byB0aGUgaG9sZGVyIG9mIHRoaXMga2V5LiIsInNlcSI6MSwicHJldiI6InoxU3JEVVowU1V6UUstNTJ3NjR5czNJUFZaUlJVWVJfc1c3Ukw2LU9WWjAifQ.yPPFrw7PNUnfp1CuwJ-no0y1F_V_vedJfG7sW9g1-TDYhOud78S62GAPatZmJtauHetpAST-ozlfzBh5R8DnDg",
         "manifest": {
           "version": "1",
           "subject": {
@@ -60,10 +60,10 @@
             "displayName": "David V. Kimball",
             "publicKey": {
               "crv": "Ed25519",
-              "x": "kN8qIEUo32gxJH8RcNyJ-DUELUMomignsBP1zce_tZg",
+              "x": "95Kvw9qn5vuFr9sTWCdZK1ZBcd59CwkUDBbWH-vmGj4",
               "kty": "OKP"
             },
-            "keyId": "K81mnnQ9rjbhqrwCO3AEg4bC3jJl1vwy8oyHuVHh4dY"
+            "keyId": "sz9jYh0nss0GXJgag8OLFz_PobjHrYfxuTKMPOyB7Z0"
           },
           "accounts": [
             {
@@ -84,14 +84,14 @@
           "issued": "2026-01-01T00:00:00.000Z",
           "statement": "These accounts belong to the holder of this key.",
           "seq": 1,
-          "prev": "DX4wq0_C3-Tfh7UE4GqYuaQSq8EDSjjFNHySaDEbksI"
+          "prev": "z1SrDUZ0SUzQK-52w64ys3IPVZRRUYR_sW7RL6-OVZ0"
         },
         "publicKeyJwk": {
           "crv": "Ed25519",
-          "x": "kN8qIEUo32gxJH8RcNyJ-DUELUMomignsBP1zce_tZg",
+          "x": "95Kvw9qn5vuFr9sTWCdZK1ZBcd59CwkUDBbWH-vmGj4",
           "kty": "OKP"
         },
-        "keyId": "K81mnnQ9rjbhqrwCO3AEg4bC3jJl1vwy8oyHuVHh4dY"
+        "keyId": "sz9jYh0nss0GXJgag8OLFz_PobjHrYfxuTKMPOyB7Z0"
       }
     }
   ]

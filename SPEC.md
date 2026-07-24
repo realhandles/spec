@@ -160,8 +160,47 @@ over the exact string `rh-rotate:v1:<newKeyId>:<seq>:<prev>` (empty for a null
 prev). A verifier confirms the previous key (whose public JWK is in the prior
 entry) signed that statement, then transfers trust to the new key. You pin the
 **genesis** key; the chain proves the current key from it. A key change without a
-valid rotation is rejected. This is how an identity survives a key loss or
-planned rotation without becoming a different person.
+valid rotation is rejected. This is how an identity survives a planned key change
+without becoming a different person.
+
+**Recovery (a key change when the old key is gone).** A rotation signed by the
+previous key is impossible if that key is lost. An entry MAY instead carry
+`rotation.recovery`, an array of `{ keyId, sig }` where each `sig` is a compact
+JWS by a DESIGNATED recovery key over the exact string
+`rh-recover:v1:<newKeyId>:<seq>:<prev>` (empty for a null prev). This statement
+is deliberately distinct from the rotation statement so that a signature
+collected for one purpose cannot be replayed as the other.
+
+Designation happens in advance, in the signed payload, via `recovery`:
+
+```json
+"recovery": {
+  "threshold": 1,
+  "keys": [{ "keyId": "...", "publicKey": { "kty": "OKP", "crv": "Ed25519", "x": "..." }, "label": "printed recovery key" }]
+}
+```
+
+A verifier accepts a recovery when at least `threshold` DISTINCT keys named in
+the policy have each produced a valid signature over the statement above. Rules a
+conforming verifier MUST apply:
+
+1. The policy in force is the one in the most recent PRIOR entry, never the one
+   the recovering entry declares about itself. Otherwise an attacker could arrive
+   asserting their own key had been authorized all along.
+2. Each designated key counts at most once, however many signatures it submits.
+3. A policy is invalid (and so no recovery is possible under it) if it has no
+   keys, contains duplicate `keyId`s, or has a `threshold` outside
+   `1..keys.length`.
+4. Each designated entry's embedded `publicKey` MUST hash to its stated `keyId`
+   (section 2), or that key does not count.
+
+`threshold: 1` with a single key is an offline "printed recovery key". Higher
+thresholds over several keys express recovery contacts, where some number of
+trusted parties must agree. Both are the same mechanism.
+
+Note what no path grants: a server, a login, or a domain can never authorize a
+key change. Recovery authority is always delegated by the identity's own key, in
+advance, in public.
 
 ## 5. Handle reservation
 
@@ -187,7 +226,9 @@ DID / verifiable-credentials ecosystem.
 
 The [`vectors/`](./vectors/) directory holds signed example files and their
 expected verification results. A conforming verifier MUST accept the valid
-vector and reject each invalid one for the stated reason.
+vector and reject each invalid one for the stated reason. A vector carrying
+`"mustFail": true` is expected to be REJECTED; `forged-recovery-chain.json` is
+one, and a verifier that accepts it will hand identities to anyone who asks.
 
 ## 8. Versioning
 

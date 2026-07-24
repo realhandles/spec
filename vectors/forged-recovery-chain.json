@@ -1,6 +1,7 @@
 {
   "username": "dvk",
   "count": 2,
+  "mustFail": true,
   "versions": [
     {
       "seq": 0,
@@ -52,7 +53,7 @@
       "seq": 1,
       "file": {
         "$schema": "https://realhandles.com/schema/realhandles-v1.json",
-        "jws": "eyJhbGciOiJFZERTQSIsImtpZCI6IlA5NTNqSzNIVVkxTW1sR0lieWc0UVNMckFVazh2YldYWllxaUxLbnRENnMifQ.eyJ2ZXJzaW9uIjoiMSIsInN1YmplY3QiOnsidXNlcm5hbWUiOiJkdmsiLCJkaXNwbGF5TmFtZSI6IkRhdmlkIFYuIEtpbWJhbGwiLCJwdWJsaWNLZXkiOnsiY3J2IjoiRWQyNTUxOSIsIngiOiJJOTRCSTFObjJZVzJQNFg5QlJ2a2NLdEVVeExtVHpWUElWZGpOS05vT3VRIiwia3R5IjoiT0tQIn0sImtleUlkIjoiUDk1M2pLM0hVWTFNbWxHSWJ5ZzRRU0xyQVVrOHZiV1haWXFpTEtudEQ2cyJ9LCJhY2NvdW50cyI6W3sicGxhdGZvcm0iOiJnaXRodWIiLCJoYW5kbGUiOiJkYXZpZHZraW1iYWxsIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZ2l0aHViLmNvbS9kYXZpZHZraW1iYWxsIiwibWV0aG9kIjoib2F1dGgiLCJ2ZXJpZmllZEF0IjoiMjAyNi0wMS0wMVQwMDowMDowMC4wMDBaIn0seyJwbGF0Zm9ybSI6ImRvbWFpbiIsImhhbmRsZSI6ImRhdmlkdmtpbWJhbGwuY29tIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZGF2aWR2a2ltYmFsbC5jb20iLCJtZXRob2QiOiJkb21haW4tY29udHJvbCIsInZlcmlmaWVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoifV0sImlzc3VlZCI6IjIwMjYtMDEtMDFUMDA6MDA6MDAuMDAwWiIsInN0YXRlbWVudCI6IlRoZXNlIGFjY291bnRzIGJlbG9uZyB0byB0aGUgaG9sZGVyIG9mIHRoaXMga2V5LiIsInNlcSI6MSwicHJldiI6InoxU3JEVVowU1V6UUstNTJ3NjR5czNJUFZaUlJVWVJfc1c3Ukw2LU9WWjAiLCJyb3RhdGlvbiI6eyJwcmV2S2V5SWQiOiJzejlqWWgwbnNzMEdYSmdhZzhPTEZ6X1BvYmpIcllmeHVUS01QT3lCN1owIiwicHJldktleVNpZyI6ImV5SmhiR2NpT2lKRlpFUlRRU0lzSW10cFpDSTZJbk42T1dwWmFEQnVjM013UjFoS1oyRm5PRTlNUm5wZlVHOWlha2h5V1daNGRWUkxUVkJQZVVJM1dqQWlmUS5jbWd0Y205MFlYUmxPbll4T2xBNU5UTnFTek5JVlZreFRXMXNSMGxpZVdjMFVWTk1ja0ZWYXpoMllsZFlXbGx4YVV4TGJuUkVObk02TVRwNk1WTnlSRlZhTUZOVmVsRkxMVFV5ZHpZMGVYTXpTVkJXV2xKU1ZWbFNYM05YTjFKTU5pMVBWbG93LmRydHBQVWhmeVFHU0FpaDc5UHVxZHloVHI3NGYzdG1icmh4djgyWkc4Wm9YdkF6Y2pRYTd5b1JGMmlUMXNEcUVMWVpwT0lFYUVqTkM2ODBUTkhQMkR3In19.gthB6j3pyv_BeofvRfD6VQ181nIencsyaW5_FvNqU6_sea_H5giFYKv7g8hYaMPX3YlVXqV9qwbPVOJ1u6C_Cw",
+        "jws": "eyJhbGciOiJFZERTQSIsImtpZCI6InlhbVRTS0xFeF9zZUpBblpwd25JdkZ6SHZwOFplMDkyTlNybzJETng0bDQifQ.eyJ2ZXJzaW9uIjoiMSIsInN1YmplY3QiOnsidXNlcm5hbWUiOiJkdmsiLCJkaXNwbGF5TmFtZSI6IkRhdmlkIFYuIEtpbWJhbGwiLCJwdWJsaWNLZXkiOnsiY3J2IjoiRWQyNTUxOSIsIngiOiJ4enRsVFFOMWJpODZhemo3cFVJcjQzVkwzd3AxVXo3Z2tKTXphRTgxaFJvIiwia3R5IjoiT0tQIn0sImtleUlkIjoieWFtVFNLTEV4X3NlSkFuWnB3bkl2RnpIdnA4WmUwOTJOU3JvMkROeDRsNCJ9LCJhY2NvdW50cyI6W3sicGxhdGZvcm0iOiJnaXRodWIiLCJoYW5kbGUiOiJkYXZpZHZraW1iYWxsIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZ2l0aHViLmNvbS9kYXZpZHZraW1iYWxsIiwibWV0aG9kIjoib2F1dGgiLCJ2ZXJpZmllZEF0IjoiMjAyNi0wMS0wMVQwMDowMDowMC4wMDBaIn0seyJwbGF0Zm9ybSI6ImRvbWFpbiIsImhhbmRsZSI6ImRhdmlkdmtpbWJhbGwuY29tIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZGF2aWR2a2ltYmFsbC5jb20iLCJtZXRob2QiOiJkb21haW4tY29udHJvbCIsInZlcmlmaWVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoifV0sImlzc3VlZCI6IjIwMjYtMDEtMDFUMDA6MDA6MDAuMDAwWiIsInN0YXRlbWVudCI6IlRoZXNlIGFjY291bnRzIGJlbG9uZyB0byB0aGUgaG9sZGVyIG9mIHRoaXMga2V5LiIsInNlcSI6MSwicHJldiI6InoxU3JEVVowU1V6UUstNTJ3NjR5czNJUFZaUlJVWVJfc1c3Ukw2LU9WWjAiLCJyb3RhdGlvbiI6eyJyZWNvdmVyeSI6W3sia2V5SWQiOiJpTVNiX0phV3RYV21uSmJNdkwtWnRkbERnMENiWmdsTDk3dU9DTWQyNnBnIiwic2lnIjoiZXlKaGJHY2lPaUpGWkVSVFFTSXNJbXRwWkNJNkltbE5VMkpmU21GWGRGaFhiVzVLWWsxMlRDMWFkR1JzUkdjd1EySmFaMnhNT1RkMVQwTk5aREkyY0djaWZRLmNtZ3RjbVZqYjNabGNqcDJNVHA1WVcxVVUwdE1SWGhmYzJWS1FXNWFjSGR1U1haR2VraDJjRGhhWlRBNU1rNVRjbTh5UkU1NE5HdzBPakU2ZWpGVGNrUlZXakJUVlhwUlN5MDFNbmMyTkhsek0wbFFWbHBTVWxWWlVsOXpWemRTVERZdFQxWmFNQS5LbTNibVRCME5SakM4M3J0R1VmWXRjcmVDVndxbzA5Z01feVBTRTlTQTRBZHBqQ1Q4Y3U1MkFRWWVVMEJRcnk0RXFRdXNNR2pHVE1adzFTXzFhcmZCUSJ9XX0sInJlY292ZXJ5Ijp7InRocmVzaG9sZCI6MSwia2V5cyI6W3sia2V5SWQiOiJpTVNiX0phV3RYV21uSmJNdkwtWnRkbERnMENiWmdsTDk3dU9DTWQyNnBnIiwicHVibGljS2V5Ijp7ImNydiI6IkVkMjU1MTkiLCJ4IjoiOE5tQ0lhRGktdmZqTzBud1dIbnRFSGoyZXBWaVJQVTFtc3M3M2NrR3VKZyIsImt0eSI6Ik9LUCJ9LCJsYWJlbCI6InNlbGYtZGVjbGFyZWQifV19fQ.nzmE_vDvhgJh6GnqgRQEPNtjUSCSmUhbBrpNlO93LJNPBN8-81wGGa0FbnzONmADSudPqTk4tdM1TKqIIbLeDA",
         "manifest": {
           "version": "1",
           "subject": {
@@ -60,10 +61,10 @@
             "displayName": "David V. Kimball",
             "publicKey": {
               "crv": "Ed25519",
-              "x": "I94BI1Nn2YW2P4X9BRvkcKtEUxLmTzVPIVdjNKNoOuQ",
+              "x": "xztlTQN1bi86azj7pUIr43VL3wp1Uz7gkJMzaE81hRo",
               "kty": "OKP"
             },
-            "keyId": "P953jK3HUY1MmlGIbyg4QSLrAUk8vbWXZYqiLKntD6s"
+            "keyId": "yamTSKLEx_seJAnZpwnIvFzHvp8Ze092NSro2DNx4l4"
           },
           "accounts": [
             {
@@ -86,16 +87,34 @@
           "seq": 1,
           "prev": "z1SrDUZ0SUzQK-52w64ys3IPVZRRUYR_sW7RL6-OVZ0",
           "rotation": {
-            "prevKeyId": "sz9jYh0nss0GXJgag8OLFz_PobjHrYfxuTKMPOyB7Z0",
-            "prevKeySig": "eyJhbGciOiJFZERTQSIsImtpZCI6InN6OWpZaDBuc3MwR1hKZ2FnOE9MRnpfUG9iakhyWWZ4dVRLTVBPeUI3WjAifQ.cmgtcm90YXRlOnYxOlA5NTNqSzNIVVkxTW1sR0lieWc0UVNMckFVazh2YldYWllxaUxLbnRENnM6MTp6MVNyRFVaMFNVelFLLTUydzY0eXMzSVBWWlJSVVlSX3NXN1JMNi1PVlow.drtpPUhfyQGSAih79PuqdyhTr74f3tmbrhxv82ZG8ZoXvAzcjQa7yoRF2iT1sDqELYZpOIEaEjNC680TNHP2Dw"
+            "recovery": [
+              {
+                "keyId": "iMSb_JaWtXWmnJbMvL-ZtdlDg0CbZglL97uOCMd26pg",
+                "sig": "eyJhbGciOiJFZERTQSIsImtpZCI6ImlNU2JfSmFXdFhXbW5KYk12TC1adGRsRGcwQ2JaZ2xMOTd1T0NNZDI2cGcifQ.cmgtcmVjb3Zlcjp2MTp5YW1UU0tMRXhfc2VKQW5acHduSXZGekh2cDhaZTA5Mk5Tcm8yRE54NGw0OjE6ejFTckRVWjBTVXpRSy01Mnc2NHlzM0lQVlpSUlVZUl9zVzdSTDYtT1ZaMA.Km3bmTB0NRjC83rtGUfYtcreCVwqo09gM_yPSE9SA4AdpjCT8cu52AQYeU0BQry4EqQusMGjGTMZw1S_1arfBQ"
+              }
+            ]
+          },
+          "recovery": {
+            "threshold": 1,
+            "keys": [
+              {
+                "keyId": "iMSb_JaWtXWmnJbMvL-ZtdlDg0CbZglL97uOCMd26pg",
+                "publicKey": {
+                  "crv": "Ed25519",
+                  "x": "8NmCIaDi-vfjO0nwWHntEHj2epViRPU1mss73ckGuJg",
+                  "kty": "OKP"
+                },
+                "label": "self-declared"
+              }
+            ]
           }
         },
         "publicKeyJwk": {
           "crv": "Ed25519",
-          "x": "I94BI1Nn2YW2P4X9BRvkcKtEUxLmTzVPIVdjNKNoOuQ",
+          "x": "xztlTQN1bi86azj7pUIr43VL3wp1Uz7gkJMzaE81hRo",
           "kty": "OKP"
         },
-        "keyId": "P953jK3HUY1MmlGIbyg4QSLrAUk8vbWXZYqiLKntD6s"
+        "keyId": "yamTSKLEx_seJAnZpwnIvFzHvp8Ze092NSro2DNx4l4"
       }
     }
   ]

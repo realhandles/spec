@@ -1,0 +1,134 @@
+{
+  "username": "dvk",
+  "count": 2,
+  "versions": [
+    {
+      "seq": 0,
+      "file": {
+        "$schema": "https://realhandles.com/schema/realhandles-v1.json",
+        "jws": "eyJhbGciOiJFZERTQSIsImtpZCI6InN6OWpZaDBuc3MwR1hKZ2FnOE9MRnpfUG9iakhyWWZ4dVRLTVBPeUI3WjAifQ.eyJ2ZXJzaW9uIjoiMSIsInN1YmplY3QiOnsidXNlcm5hbWUiOiJkdmsiLCJkaXNwbGF5TmFtZSI6IkRhdmlkIFYuIEtpbWJhbGwiLCJwdWJsaWNLZXkiOnsiY3J2IjoiRWQyNTUxOSIsIngiOiI5NUt2dzlxbjV2dUZyOXNUV0NkWksxWkJjZDU5Q3drVURCYldILXZtR2o0Iiwia3R5IjoiT0tQIn0sImtleUlkIjoic3o5alloMG5zczBHWEpnYWc4T0xGel9Qb2JqSHJZZnh1VEtNUE95QjdaMCJ9LCJhY2NvdW50cyI6W3sicGxhdGZvcm0iOiJnaXRodWIiLCJoYW5kbGUiOiJkYXZpZHZraW1iYWxsIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZ2l0aHViLmNvbS9kYXZpZHZraW1iYWxsIiwibWV0aG9kIjoib2F1dGgiLCJ2ZXJpZmllZEF0IjoiMjAyNi0wMS0wMVQwMDowMDowMC4wMDBaIn0seyJwbGF0Zm9ybSI6ImRvbWFpbiIsImhhbmRsZSI6ImRhdmlkdmtpbWJhbGwuY29tIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZGF2aWR2a2ltYmFsbC5jb20iLCJtZXRob2QiOiJkb21haW4tY29udHJvbCIsInZlcmlmaWVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoifV0sImlzc3VlZCI6IjIwMjYtMDEtMDFUMDA6MDA6MDAuMDAwWiIsInN0YXRlbWVudCI6IlRoZXNlIGFjY291bnRzIGJlbG9uZyB0byB0aGUgaG9sZGVyIG9mIHRoaXMga2V5LiIsInNlcSI6MCwicHJldiI6bnVsbCwicmVjb3ZlcnkiOnsidGhyZXNob2xkIjoxLCJrZXlzIjpbeyJrZXlJZCI6IndkUUhpbzZJUlFLdFV4RmYxbDZyUWh1dnNkaWQ1enlSRXhuR3dQa0thcHciLCJwdWJsaWNLZXkiOnsiY3J2IjoiRWQyNTUxOSIsIngiOiJjcXlYbU8xTVYyLTNlVXhRMlZOSVJFV2Z0Z2tQQ2s0c3IyNjBtTTFCZUhNIiwia3R5IjoiT0tQIn0sImxhYmVsIjoicHJpbnRlZCByZWNvdmVyeSBrZXkifV19fQ.5dMDqQi55xg_JdW3QJ5Oi3AsTRVsVCZAEDj9lza-VxhZ4jugJyRlJ5C119Wsiq6NE3b75ajD9FVs1LcsXWAGCA",
+        "manifest": {
+          "version": "1",
+          "subject": {
+            "username": "dvk",
+            "displayName": "David V. Kimball",
+            "publicKey": {
+              "crv": "Ed25519",
+              "x": "95Kvw9qn5vuFr9sTWCdZK1ZBcd59CwkUDBbWH-vmGj4",
+              "kty": "OKP"
+            },
+            "keyId": "sz9jYh0nss0GXJgag8OLFz_PobjHrYfxuTKMPOyB7Z0"
+          },
+          "accounts": [
+            {
+              "platform": "github",
+              "handle": "davidvkimball",
+              "profileUrl": "https://github.com/davidvkimball",
+              "method": "oauth",
+              "verifiedAt": "2026-01-01T00:00:00.000Z"
+            },
+            {
+              "platform": "domain",
+              "handle": "davidvkimball.com",
+              "profileUrl": "https://davidvkimball.com",
+              "method": "domain-control",
+              "verifiedAt": "2026-01-01T00:00:00.000Z"
+            }
+          ],
+          "issued": "2026-01-01T00:00:00.000Z",
+          "statement": "These accounts belong to the holder of this key.",
+          "seq": 0,
+          "prev": null,
+          "recovery": {
+            "threshold": 1,
+            "keys": [
+              {
+                "keyId": "wdQHio6IRQKtUxFf1l6rQhuvsdid5zyRExnGwPkKapw",
+                "publicKey": {
+                  "crv": "Ed25519",
+                  "x": "cqyXmO1MV2-3eUxQ2VNIREWftgkPCk4sr260mM1BeHM",
+                  "kty": "OKP"
+                },
+                "label": "printed recovery key"
+              }
+            ]
+          }
+        },
+        "publicKeyJwk": {
+          "crv": "Ed25519",
+          "x": "95Kvw9qn5vuFr9sTWCdZK1ZBcd59CwkUDBbWH-vmGj4",
+          "kty": "OKP"
+        },
+        "keyId": "sz9jYh0nss0GXJgag8OLFz_PobjHrYfxuTKMPOyB7Z0"
+      }
+    },
+    {
+      "seq": 1,
+      "file": {
+        "$schema": "https://realhandles.com/schema/realhandles-v1.json",
+        "jws": "eyJhbGciOiJFZERTQSIsImtpZCI6InlhbVRTS0xFeF9zZUpBblpwd25JdkZ6SHZwOFplMDkyTlNybzJETng0bDQifQ.eyJ2ZXJzaW9uIjoiMSIsInN1YmplY3QiOnsidXNlcm5hbWUiOiJkdmsiLCJkaXNwbGF5TmFtZSI6IkRhdmlkIFYuIEtpbWJhbGwiLCJwdWJsaWNLZXkiOnsiY3J2IjoiRWQyNTUxOSIsIngiOiJ4enRsVFFOMWJpODZhemo3cFVJcjQzVkwzd3AxVXo3Z2tKTXphRTgxaFJvIiwia3R5IjoiT0tQIn0sImtleUlkIjoieWFtVFNLTEV4X3NlSkFuWnB3bkl2RnpIdnA4WmUwOTJOU3JvMkROeDRsNCJ9LCJhY2NvdW50cyI6W3sicGxhdGZvcm0iOiJnaXRodWIiLCJoYW5kbGUiOiJkYXZpZHZraW1iYWxsIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZ2l0aHViLmNvbS9kYXZpZHZraW1iYWxsIiwibWV0aG9kIjoib2F1dGgiLCJ2ZXJpZmllZEF0IjoiMjAyNi0wMS0wMVQwMDowMDowMC4wMDBaIn0seyJwbGF0Zm9ybSI6ImRvbWFpbiIsImhhbmRsZSI6ImRhdmlkdmtpbWJhbGwuY29tIiwicHJvZmlsZVVybCI6Imh0dHBzOi8vZGF2aWR2a2ltYmFsbC5jb20iLCJtZXRob2QiOiJkb21haW4tY29udHJvbCIsInZlcmlmaWVkQXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMFoifV0sImlzc3VlZCI6IjIwMjYtMDEtMDFUMDA6MDA6MDAuMDAwWiIsInN0YXRlbWVudCI6IlRoZXNlIGFjY291bnRzIGJlbG9uZyB0byB0aGUgaG9sZGVyIG9mIHRoaXMga2V5LiIsInNlcSI6MSwicHJldiI6Ikg5SU1XdmpRam5pYWM1X2t5aEV6aTJ1RGtKd3haX3Z4NzUwakJnNlJmZFEiLCJyb3RhdGlvbiI6eyJyZWNvdmVyeSI6W3sia2V5SWQiOiJ3ZFFIaW82SVJRS3RVeEZmMWw2clFodXZzZGlkNXp5UkV4bkd3UGtLYXB3Iiwic2lnIjoiZXlKaGJHY2lPaUpGWkVSVFFTSXNJbXRwWkNJNkluZGtVVWhwYnpaSlVsRkxkRlY0Um1ZeGJEWnlVV2gxZG5Oa2FXUTFlbmxTUlhodVIzZFFhMHRoY0hjaWZRLmNtZ3RjbVZqYjNabGNqcDJNVHA1WVcxVVUwdE1SWGhmYzJWS1FXNWFjSGR1U1haR2VraDJjRGhhWlRBNU1rNVRjbTh5UkU1NE5HdzBPakU2U0RsSlRWZDJhbEZxYm1saFl6VmZhM2xvUlhwcE1uVkVhMHAzZUZwZmRuZzNOVEJxUW1jMlVtWmtVUS56Wl83VDdJYXE1WnA4SE5oNXp4ZkhlOXlYdmdOMklNM0REc3d6cVlHeGZJQk5fMXB3WmlzTUpYU1ZBRTNOdWZQNlpTT0IwLTdCV1BhVEZSdmdrUEpEUSJ9XX0sInJlY292ZXJ5Ijp7InRocmVzaG9sZCI6MSwia2V5cyI6W3sia2V5SWQiOiJ3ZFFIaW82SVJRS3RVeEZmMWw2clFodXZzZGlkNXp5UkV4bkd3UGtLYXB3IiwicHVibGljS2V5Ijp7ImNydiI6IkVkMjU1MTkiLCJ4IjoiY3F5WG1PMU1WMi0zZVV4UTJWTklSRVdmdGdrUENrNHNyMjYwbU0xQmVITSIsImt0eSI6Ik9LUCJ9LCJsYWJlbCI6InByaW50ZWQgcmVjb3Zlcnkga2V5In1dfX0.w0pbDSqDvV0EQvRiUYXayE83I2756UCOe9w2OdHwOH2oLnj58UL4DwHpm8VapRuFUJ5iN-QsnkzNEdQBiRHiDA",
+        "manifest": {
+          "version": "1",
+          "subject": {
+            "username": "dvk",
+            "displayName": "David V. Kimball",
+            "publicKey": {
+              "crv": "Ed25519",
+              "x": "xztlTQN1bi86azj7pUIr43VL3wp1Uz7gkJMzaE81hRo",
+              "kty": "OKP"
+            },
+            "keyId": "yamTSKLEx_seJAnZpwnIvFzHvp8Ze092NSro2DNx4l4"
+          },
+          "accounts": [
+            {
+              "platform": "github",
+              "handle": "davidvkimball",
+              "profileUrl": "https://github.com/davidvkimball",
+              "method": "oauth",
+              "verifiedAt": "2026-01-01T00:00:00.000Z"
+            },
+            {
+              "platform": "domain",
+              "handle": "davidvkimball.com",
+              "profileUrl": "https://davidvkimball.com",
+              "method": "domain-control",
+              "verifiedAt": "2026-01-01T00:00:00.000Z"
+            }
+          ],
+          "issued": "2026-01-01T00:00:00.000Z",
+          "statement": "These accounts belong to the holder of this key.",
+          "seq": 1,
+          "prev": "H9IMWvjQjniac5_kyhEzi2uDkJwxZ_vx750jBg6RfdQ",
+          "rotation": {
+            "recovery": [
+              {
+                "keyId": "wdQHio6IRQKtUxFf1l6rQhuvsdid5zyRExnGwPkKapw",
+                "sig": "eyJhbGciOiJFZERTQSIsImtpZCI6IndkUUhpbzZJUlFLdFV4RmYxbDZyUWh1dnNkaWQ1enlSRXhuR3dQa0thcHcifQ.cmgtcmVjb3Zlcjp2MTp5YW1UU0tMRXhfc2VKQW5acHduSXZGekh2cDhaZTA5Mk5Tcm8yRE54NGw0OjE6SDlJTVd2alFqbmlhYzVfa3loRXppMnVEa0p3eFpfdng3NTBqQmc2UmZkUQ.zZ_7T7Iaq5Zp8HNh5zxfHe9yXvgN2IM3DDswzqYGxfIBN_1pwZisMJXSVAE3NufP6ZSOB0-7BWPaTFRvgkPJDQ"
+              }
+            ]
+          },
+          "recovery": {
+            "threshold": 1,
+            "keys": [
+              {
+                "keyId": "wdQHio6IRQKtUxFf1l6rQhuvsdid5zyRExnGwPkKapw",
+                "publicKey": {
+                  "crv": "Ed25519",
+                  "x": "cqyXmO1MV2-3eUxQ2VNIREWftgkPCk4sr260mM1BeHM",
+                  "kty": "OKP"
+                },
+                "label": "printed recovery key"
+              }
+            ]
+          }
+        },
+        "publicKeyJwk": {
+          "crv": "Ed25519",
+          "x": "xztlTQN1bi86azj7pUIr43VL3wp1Uz7gkJMzaE81hRo",
+          "kty": "OKP"
+        },
+        "keyId": "yamTSKLEx_seJAnZpwnIvFzHvp8Ze092NSro2DNx4l4"
+      }
+    }
+  ]
+}
